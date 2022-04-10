@@ -1,0 +1,965 @@
+<!DOCTYPE HTML>
+<html lang="de" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Linux Praktikum</title>
+                <meta name="robots" content="noindex" />
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Einleitung</a></li><li class="chapter-item expanded affix "><a href="SUMMARY.html">Gliederung</a></li><li class="chapter-item expanded affix "><li class="part-title"> Installation & Hello World</li><li class="chapter-item expanded "><a href="grundlagen/inhalt.html"><strong aria-hidden="true">1.</strong> Linux-Grundlagen</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="grundlagen/linux-unix-foss.html"><strong aria-hidden="true">1.1.</strong> Linux, Unix &amp; FOSS</a></li><li class="chapter-item expanded "><a href="grundlagen/kommerzieller-einsatz.html"><strong aria-hidden="true">1.2.</strong> Mit freier Software Geld verdienen?</a></li><li class="chapter-item expanded "><a href="grundlagen/einsatzbereiche.html"><strong aria-hidden="true">1.3.</strong> Wo wird Linux verwendet?</a></li><li class="chapter-item expanded "><a href="grundlagen/architektur.html"><strong aria-hidden="true">1.4.</strong> Architektur</a></li></ol></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation von Linux-Systemen</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/grundlagen/entscheidungen.html"><strong aria-hidden="true">2.1.</strong> Grundlagen</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/grundlagen/distributionen.html"><strong aria-hidden="true">2.1.1.</strong> Distributionen</a></li><li class="chapter-item expanded "><a href="installation/grundlagen/desktops.html"><strong aria-hidden="true">2.1.2.</strong> Desktopumgebungen</a></li><li class="chapter-item expanded "><a href="installation/grundlagen/live-stick.html"><strong aria-hidden="true">2.1.3.</strong> Live-Stick erstellen</a></li><li class="chapter-item expanded "><a href="installation/grundlagen/partitionierung.html"><strong aria-hidden="true">2.1.4.</strong> Partitionierung</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/grundlagen/partitionierung/HOWTO.html"><strong aria-hidden="true">2.1.4.1.</strong> HowTo</a></li></ol></li><li class="chapter-item expanded "><a href="installation/grundlagen/paketquellen.html"><strong aria-hidden="true">2.1.5.</strong> Paketquellen</a></li><li class="chapter-item expanded "><a href="installation/grundlagen/manual.html"><strong aria-hidden="true">2.1.6.</strong> Bedienungsanleitung</a></li></ol></li><li class="chapter-item expanded "><a href="installation/treiber.html"><strong aria-hidden="true">2.2.</strong> Treiber</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installation/treiber/ahci.html"><strong aria-hidden="true">2.2.1.</strong> AHCI</a></li><li class="chapter-item expanded "><a href="installation/treiber/wifi.html"><strong aria-hidden="true">2.2.2.</strong> Wifi</a></li></ol></li><li class="chapter-item expanded "><a href="installation/multi-os.html"><strong aria-hidden="true">2.3.</strong> Linux + Windows / macOS</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"> Shell & Netzwerk</li><li class="chapter-item expanded "><a href="kommandozeile.html"><strong aria-hidden="true">3.</strong> Administration auf der Kommandozeile</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="shell/unix-philosophie.html"><strong aria-hidden="true">3.1.</strong> Unix-Philosophie</a></li></ol></li><li class="chapter-item expanded "><a href="dateisystem.html"><strong aria-hidden="true">4.</strong> Verwalten des Dateisystems</a></li><li class="chapter-item expanded "><a href="berechtigungen.html"><strong aria-hidden="true">5.</strong> Benutzer und Berechtigungen verwalten</a></li><li class="chapter-item expanded "><a href="netzwerk.html"><strong aria-hidden="true">6.</strong> Netzwerk-Konfiguration</a></li><li class="chapter-item expanded "><a href="ssh.html"><strong aria-hidden="true">7.</strong> SSH</a></li><li class="chapter-item expanded affix "><li class="part-title"> Architektur & Sicherheit</li><li class="chapter-item expanded "><a href="bootprozess.html"><strong aria-hidden="true">8.</strong> Bootloader und Bootprozess</a></li><li class="chapter-item expanded "><a href="init.html"><strong aria-hidden="true">9.</strong> Init am Beispiel Systemd</a></li><li class="chapter-item expanded "><a href="live-systeme.html"><strong aria-hidden="true">10.</strong> Live-Systeme, Datenrettung, Hacken</a></li><li class="chapter-item expanded "><a href="verschlüsselung.html"><strong aria-hidden="true">11.</strong> Verschlüsselung</a></li><li class="chapter-item expanded "><a href="virtualisierung.html"><strong aria-hidden="true">12.</strong> Virtualisierung</a></li><li class="chapter-item expanded affix "><li class="part-title"> Entwicklung & Ausblick</li><li class="chapter-item expanded "><a href="backups.html"><strong aria-hidden="true">13.</strong> Backups</a></li><li class="chapter-item expanded "><a href="versionskontrolle.html"><strong aria-hidden="true">14.</strong> Versionskontrolle am Beispiel git</a></li><li class="chapter-item expanded "><a href="bash.html"><strong aria-hidden="true">15.</strong> Skript-Programmierung mit Bash</a></li><li class="chapter-item expanded "><a href="entwicklung.html"><strong aria-hidden="true">16.</strong> Softwareentwicklung</a></li><li class="chapter-item expanded "><a href="ausblick.html"><strong aria-hidden="true">17.</strong> Ausblick</a></li><li class="chapter-item expanded affix "><a href="cheatsheet.html">Spickzettel</a></li><li class="chapter-item expanded affix "><a href="links.html">Quellen &amp; Links</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Linux Praktikum</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>Berufsschule Dresden der AFBB gGmbH</p>
+<h1 id="zusatzqualifikation-linux"><a class="header" href="#zusatzqualifikation-linux">Zusatzqualifikation LINUX</a></h1>
+<p>Einwöchiger Kurs für <strong>Fachinformatiker</strong> im <strong>1. Ausbildungsjahr</strong></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" style="max-height:50vh; min-height:20vh"/>
+<h4 id="schulungsunterlagen"><a class="header" href="#schulungsunterlagen">Schulungsunterlagen</a></h4>
+<p>Dieses Dokument/Repository wurde mit <a href="https://rust-lang.github.io/mdBook/">mdBook</a> erstellt.</p>
+<p>Das Material ist unter der Creative Commons Lizenz <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> veröffentlicht und darf gerne für andere Zwecke angepasst und geteilt werden.
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Cc.logo.circle.svg" alt="cc" style="width:1em"/><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Cc-by_new.svg" alt="by" style="width:1em"/></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inhaltsverzeichnis"><a class="header" href="#inhaltsverzeichnis">Inhaltsverzeichnis</a></h1>
+<p><a href="../README.html">Einleitung</a></p>
+<p><a href="./SUMMARY.html">Gliederung</a></p>
+<h1 id="--montag---installation--hello-world"><a class="header" href="#--montag---installation--hello-world"><!--Montag--> Installation &amp; Hello World</a></h1>
+<ul>
+<li><a href="grundlagen/inhalt.html">Linux-Grundlagen</a>
+<ul>
+<li><a href="grundlagen/linux-unix-foss.html">Linux, Unix &amp; FOSS</a></li>
+<li><a href="grundlagen/kommerzieller-einsatz.html">Mit freier Software Geld verdienen?</a></li>
+<li><a href="grundlagen/einsatzbereiche.html">Wo wird Linux verwendet?</a></li>
+<li><a href="grundlagen/architektur.html">Architektur</a></li>
+</ul>
+</li>
+<li><a href="installation.html">Installation von Linux-Systemen</a>
+<ul>
+<li><a href="installation/grundlagen/entscheidungen.html">Grundlagen</a>
+<ul>
+<li><a href="installation/grundlagen/distributionen.html">Distributionen</a></li>
+<li><a href="installation/grundlagen/desktops.html">Desktopumgebungen</a></li>
+<li><a href="installation/grundlagen/live-stick.html">Live-Stick erstellen</a></li>
+<li><a href="installation/grundlagen/partitionierung.html">Partitionierung</a>
+<ul>
+<li><a href="installation/grundlagen/partitionierung/HOWTO.html">HowTo</a></li>
+</ul>
+</li>
+<li><a href="installation/grundlagen/paketquellen.html">Paketquellen</a></li>
+<li><a href="installation/grundlagen/manual.html">Bedienungsanleitung</a></li>
+</ul>
+</li>
+<li><a href="installation/treiber.html">Treiber</a>
+<ul>
+<li><a href="installation/treiber/ahci.html">AHCI</a></li>
+<li><a href="installation/treiber/wifi.html">Wifi</a></li>
+</ul>
+</li>
+<li><a href="installation/multi-os.html">Linux + Windows / macOS</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Zeit für Erstkontakt zu Linux<br/></p>
+</blockquote>
+<blockquote>
+<p>-&gt; Einrichtung gängiger FOSS GUIs</p>
+</blockquote>
+<h1 id="--dienstag---shell--netzwerk"><a class="header" href="#--dienstag---shell--netzwerk"><!--Dienstag--> Shell &amp; Netzwerk</a></h1>
+<ul>
+<li><a href="kommandozeile.html">Administration auf der Kommandozeile</a>
+<ul>
+<li><a href="shell/unix-philosophie.html">Unix-Philosophie</a></li>
+</ul>
+</li>
+<li><a href="dateisystem.html">Verwalten des Dateisystems</a></li>
+<li><a href="berechtigungen.html">Benutzer und Berechtigungen verwalten</a></li>
+<li><a href="netzwerk.html">Netzwerk-Konfiguration</a></li>
+<li><a href="ssh.html">SSH</a></li>
+</ul>
+<h1 id="--mittwoch---architektur--sicherheit"><a class="header" href="#--mittwoch---architektur--sicherheit"><!--Mittwoch--> Architektur &amp; Sicherheit</a></h1>
+<ul>
+<li><a href="bootprozess.html">Bootloader und Bootprozess</a></li>
+<li><a href="init.html">Init am Beispiel Systemd</a></li>
+<li><a href="live-systeme.html">Live-Systeme, Datenrettung, Hacken</a></li>
+<li><a href="verschl%C3%BCsselung.html">Verschlüsselung</a></li>
+<li><a href="virtualisierung.html">Virtualisierung</a></li>
+</ul>
+<h1 id="--donnerstag---entwicklung--ausblick"><a class="header" href="#--donnerstag---entwicklung--ausblick"><!--Donnerstag--> Entwicklung &amp; Ausblick</a></h1>
+<ul>
+<li><a href="backups.html">Backups</a></li>
+<li><a href="versionskontrolle.html">Versionskontrolle am Beispiel git</a></li>
+<li><a href="bash.html">Skript-Programmierung mit Bash</a></li>
+<li><a href="entwicklung.html">Softwareentwicklung</a></li>
+<li><a href="ausblick.html">Ausblick</a></li>
+</ul>
+<h2 id="weiterführende-informationen"><a class="header" href="#weiterführende-informationen">Weiterführende Informationen</a></h2>
+<p><a href="cheatsheet.html">Spickzettel</a></p>
+<p><a href="links.html">Quellen &amp; Links</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-grundlagen"><a class="header" href="#linux-grundlagen">Linux-Grundlagen</a></h1>
+<h2 id="a-hrefgrundlagenlinux-unix-fosshtmllinux-unix--fossa"><a class="header" href="#a-hrefgrundlagenlinux-unix-fosshtmllinux-unix--fossa"><a href="grundlagen/./linux-unix-foss.html">Linux, Unix &amp; FOSS</a></a></h2>
+<h2 id="a-hrefgrundlagenkommerzieller-einsatzhtmlmit-freier-software-geld-verdienena"><a class="header" href="#a-hrefgrundlagenkommerzieller-einsatzhtmlmit-freier-software-geld-verdienena"><a href="grundlagen/./kommerzieller-einsatz.html">Mit freier Software Geld verdienen?</a></a></h2>
+<h2 id="a-hrefgrundlageneinsatzbereichehtmlwo-wird-linux-verwendeta"><a class="header" href="#a-hrefgrundlageneinsatzbereichehtmlwo-wird-linux-verwendeta"><a href="grundlagen/./einsatzbereiche.html">Wo wird Linux verwendet?</a></a></h2>
+<h2 id="a-hrefgrundlagenarchitekturhtmlarchitektura"><a class="header" href="#a-hrefgrundlagenarchitekturhtmlarchitektura"><a href="grundlagen/./architektur.html">Architektur</a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-unix--foss"><a class="header" href="#linux-unix--foss">Linux, Unix &amp; FOSS</a></h1>
+<h2 id="unix"><a class="header" href="#unix">Unix</a></h2>
+<ul>
+<li>Betriebssystemfamilie seit 1969</li>
+<li>Vereinheitlichter Standart: <a href="https://de.wikipedia.org/wiki/Portable_Operating_System_Interface">POSIX</a></li>
+</ul>
+<pre class="mermaid">flowchart TB
+  Unix
+  Unix --&gt; Linux
+  Unix --&gt; BSD
+  Unix --&gt; MacOS[&quot;Mac OS&quot;]
+  Unix --&gt; Solaris
+  Unix --&gt; Minix
+  Unix --&gt; andere[&quot;…&quot;]
+</pre>
+<h2 id="gnulinux"><a class="header" href="#gnulinux">GNU/Linux</a></h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Portrait_-_Denmark_DTU_2007-3-31.jpg/220px-Portrait_-_Denmark_DTU_2007-3-31.jpg" alt="" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/172px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg" alt="" /></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/220px-GPLv3_Logo.svg.png" alt="" /></p>
+<ul>
+<li>1989 <a href="https://de.wikipedia.org/wiki/GNU_General_Public_License">GPL</a></li>
+<li>1991 Linux</li>
+<li>1992 Linux unter GPL lizensiert</li>
+<li>1993 Debian GNU/Linux</li>
+</ul>
+<!--<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/800px-Debian-OpenLogo.svg.png" style="max-height: 10vh"/>-->
+<h2 id="a-hrefhttpsdewikipediaorgwikifreelibre_open_source_softwarefossa"><a class="header" href="#a-hrefhttpsdewikipediaorgwikifreelibre_open_source_softwarefossa"><a href="https://de.wikipedia.org/wiki/Free/Libre_Open_Source_Software">FOSS</a></a></h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/150px-Firefox_logo%2C_2019.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Chromium_Material_Icon.svg/1024px-Chromium_Material_Icon.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/VLC_Icon.svg/800px-VLC_Icon.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Logo_Blender.svg/1920px-Logo_Blender.svg.png" style="max-height: 5vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/The_GIMP_icon_-_gnome.svg/1024px-The_GIMP_icon_-_gnome.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/ImageMagick_logo.svg/800px-ImageMagick_logo.svg.png" style="max-height: 10vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Thunderbird_Logo%2C_2018.svg" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Signal-Logo.svg" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/LibreOffice_Logo_Flat.svg/1920px-LibreOffice_Logo_Flat.svg.png" style="max-height: 9vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/TeX_logo.svg/1920px-TeX_logo.svg.png" style="max-height: 8vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nextcloud_Logo.svg/1280px-Nextcloud_Logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/MediaWiki-2020-logo.svg/800px-MediaWiki-2020-logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/WordPress_logo.svg/1920px-WordPress_logo.svg.png" style="max-height: 8vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Apache_HTTP_server_logo_%282019-present%29.svg/1920px-Apache_HTTP_server_logo_%282019-present%29.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/1920px-Nginx_logo.svg.png" style="max-height: 6vh"/>
+<img src="https://www.isc.org/images/bind9.png" style="max-height: 10vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/de/thumb/4/4b/Postgresql.svg/1024px-Postgresql.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/de/thumb/d/dd/MySQL_logo.svg/1280px-MySQL_logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/MariaDB_colour_logo.svg/1920px-MariaDB_colour_logo.svg.png" style="max-height: 8vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1920px-SQLite370.svg.png" style="max-height: 10vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1920px-Git-logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1920px-Docker_%28container_engine%29_logo.svg.png" style="max-height: 10vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/de/thumb/e/e1/Java-Logo.svg/800px-Java-Logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/1920px-Python_logo_and_wordmark.svg.png" style="max-height: 8vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1920px-Gnu-bash-logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1920px-PHP-logo.svg.png" style="max-height: 8vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1920px-Npm-logo.svg.png" style="max-height: 6vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/TypeScript_Logo.svg/1920px-TypeScript_Logo.svg.png" style="max-height: 5vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/GNU_Compiler_Collection_logo.svg/800px-GNU_Compiler_Collection_logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1024px-Rust_programming_language_black_logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Clojure_logo.svg/1024px-Clojure_logo.svg.png" style="max-height: 10vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Puppet_transparent_logo.svg/1920px-Puppet_transparent_logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Ansible_logo.svg/800px-Ansible_logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/SaltStack_logo_blk_2k.png/1920px-SaltStack_logo_blk_2k.png" style="max-height: 4vh"/>
+<img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" style="height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/de/thumb/6/6b/GnuPG.svg/1920px-GnuPG.svg.png" style="max-height: 6vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/OpenSSL_logo.svg/1920px-OpenSSL_logo.svg.png" style="max-height: 8vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/OpenVPN_logo.svg/1920px-OpenVPN_logo.svg.png" style="max-height: 5vh"/>
+<br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Android_logo_2019_%28stacked%29.svg/1024px-Android_logo_2019_%28stacked%29.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/LineageOS_Logo.svg" style="max-height: 8vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/OpenWrt_Logo.svg/1920px-OpenWrt_Logo.svg.png" style="max-height: 4vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/de/thumb/f/f0/NetBSD_Logo.svg/1280px-NetBSD_Logo.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Daemon-phk.svg/800px-Daemon-phk.svg.png" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Puffyanim.gif" style="max-height: 10vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/OpenSolaris_Logo.svg/1024px-OpenSolaris_Logo.svg.png" style="max-height: 8vh"/>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mit-freier-software-geld-verdienen"><a class="header" href="#mit-freier-software-geld-verdienen">Mit freier Software Geld verdienen?</a></h1>
+<h2 id="dienstleistungen"><a class="header" href="#dienstleistungen">Dienstleistungen</a></h2>
+<ul>
+<li>Administration</li>
+<li>Beratung, Schulungen</li>
+<li>Software-Anpassungen</li>
+</ul>
+<h2 id="für-hardwareprodukte"><a class="header" href="#für-hardwareprodukte">Für Hardwareprodukte</a></h2>
+<ul>
+<li>Embedded</li>
+<li>Smart Devices</li>
+<li>IoT</li>
+</ul>
+<h2 id="als-grundlage-für-dienste"><a class="header" href="#als-grundlage-für-dienste">Als Grundlage für Dienste</a></h2>
+<ul>
+<li>Klassische Webanwendungen</li>
+<li>Software / Platform / Infrastructure as a service (SaaS / PaaS / IaaS)</li>
+</ul>
+<h2 id="kommerzielle-software-basierend-auf-freien-tools"><a class="header" href="#kommerzielle-software-basierend-auf-freien-tools">(Kommerzielle) Software, basierend auf freien Tools</a></h2>
+<blockquote>
+<p><a href="https://de.wikipedia.org/wiki/Win-win">Win-win-Strategie</a> vs. <a href="https://de.wikipedia.org/wiki/Nullsummenspiel">Nullsummenspiel</a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-hrefhttpsdewikipediaorgwikilinux-einsatzbereichewo-wird-linux-verwendeta"><a class="header" href="#a-hrefhttpsdewikipediaorgwikilinux-einsatzbereichewo-wird-linux-verwendeta"><a href="https://de.wikipedia.org/wiki/Linux-Einsatzbereiche">Wo wird Linux verwendet?</a></a></h1>
+<h2 id="server--cloud"><a class="header" href="#server--cloud">Server / Cloud</a></h2>
+<ul>
+<li>
+<p>Klassische Webserver (<a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP</a>)<br/></p>
+<p>(<a href="https://de.wikipedia.org/wiki/Linux-Einsatzbereiche#Marktanteile">ca 50% Marktanteil</a>)</p>
+</li>
+<li>
+<p>Public Cloud Services (<a href="https://www.toolbox.com/tech/cloud/articles/public-cloud-service-providers/">Amazon, Google, Microsoft, Alibaba, DigitalOcean, Huawei, IBM,  …</a>)<br/></p>
+<p>(<a href="https://learning.lpi.org/de/learning-materials/010-160/1/1.1/1.1_01/">ca 90-</a><a href="https://www.linuxfoundation.org/">95% Marktanteil</a>)</p>
+</li>
+<li>
+<p>Alle <a href="http://www.top500.org/statistics/details/osfam/1">Top 500 Supercomputer</a></p>
+</li>
+</ul>
+<p><a href="https://www.top500.org/system/179942/"><img src="https://image.saechsische.de/954x636/p/q/pqegkr168ix1587e59zbotc9j2hgf6l4.jpg" alt="" /></a>
+<em>Bild: Sächsische Zeitung</em></p>
+<h2 id="mobil"><a class="header" href="#mobil">Mobil</a></h2>
+<ul>
+<li>Android
+(<a href="https://de.statista.com/statistik/daten/studie/184335/umfrage/marktanteil-der-mobilen-betriebssysteme-weltweit-seit-2009/">ca 72% Marktanteil</a>)</li>
+</ul>
+<h2 id="embedded--smart-devices--iot"><a class="header" href="#embedded--smart-devices--iot">Embedded / Smart devices / IoT</a></h2>
+<ul>
+<li>Router, NAS</li>
+<li>Smart TVs, Festplattenrekorder, Satellitenreceiver und DVD-Player</li>
+<li>Spielekonsolen (z.B. Steam Deck)</li>
+<li>In-car Entertainment, Navi <a href="https://www.autoblog.com/2014/04/12/tesla-model-s-owners-hack-their-cars-find-ubuntu/">(z.B. Tesla)</a></li>
+<li>Heimautomatisierung, Sensornetze, Einplatinencomputer (z.B. Raspberry Pi)</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Raspberry-Pi-Zero-FL.jpg" alt="" /></p>
+<h2 id="containervirtualisierung"><a class="header" href="#containervirtualisierung">Containervirtualisierung</a></h2>
+<ul>
+<li>Docker, Kubernetes</li>
+</ul>
+<h2 id="desktop"><a class="header" href="#desktop">Desktop</a></h2>
+<p>(ca 3% Marktanteil)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="architektur"><a class="header" href="#architektur">Architektur</a></h1>
+<pre class="mermaid">flowchart TB
+  subgraph Linux-Distribution
+    subgraph Anwendungsoftware
+      sonstiges[&quot;Browser, Office, …&quot;]
+      Desktopumgebung
+      Paketmanager
+    end
+    subgraph System[Linux-Systemdienste]
+      subgraph Linux-Kernel
+        Treiber
+      end
+    end
+  end
+  subgraph Hardware
+  end
+  Anwendungsoftware -.- System
+  Treiber --&gt; Hardware
+</pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-von-linux-systemen"><a class="header" href="#installation-von-linux-systemen">Installation von Linux-Systemen</a></h1>
+<h2 id="welches"><a class="header" href="#welches">Welches?</a></h2>
+<h3 id="a-hrefinstallationgrundlagendistributionenhtmldistributionena"><a class="header" href="#a-hrefinstallationgrundlagendistributionenhtmldistributionena"><a href="installation/grundlagen/distributionen.html">Distributionen</a></a></h3>
+<h3 id="a-hrefinstallationgrundlagendesktopshtmldesktopumgebungena"><a class="header" href="#a-hrefinstallationgrundlagendesktopshtmldesktopumgebungena"><a href="installation/grundlagen/desktops.html">Desktopumgebungen</a></a></h3>
+<h3 id="a-hrefinstallationgrundlagenpaketquellenhtmlpaketmanager--paketquellena"><a class="header" href="#a-hrefinstallationgrundlagenpaketquellenhtmlpaketmanager--paketquellena"><a href="installation/grundlagen/paketquellen.html">Paketmanager / Paketquellen</a></a></h3>
+<h2 id="wie"><a class="header" href="#wie">Wie?</a></h2>
+<h3 id="a-hrefinstallationgrundlagenlive-stickhtmllive-stick-erstellena"><a class="header" href="#a-hrefinstallationgrundlagenlive-stickhtmllive-stick-erstellena"><a href="installation/grundlagen/live-stick.html">Live-Stick erstellen</a></a></h3>
+<h3 id="a-hrefinstallationgrundlagenpartitionierunghtmlpartitionierunga"><a class="header" href="#a-hrefinstallationgrundlagenpartitionierunghtmlpartitionierunga"><a href="installation/grundlagen/partitionierung.html">Partitionierung</a></a></h3>
+<h3 id="a-hrefinstallationgrundlagenmanualhtmlbedienungsanleitunga"><a class="header" href="#a-hrefinstallationgrundlagenmanualhtmlbedienungsanleitunga"><a href="installation/grundlagen/manual.html">Bedienungsanleitung</a></a></h3>
+<h3 id="a-hrefinstallationtreiberhtmltreibera"><a class="header" href="#a-hrefinstallationtreiberhtmltreibera"><a href="installation/treiber.html">Treiber</a></a></h3>
+<h2 id="a-hrefinstallationmulti-oshtmllinux-parallel-zu-windows--macosa"><a class="header" href="#a-hrefinstallationmulti-oshtmllinux-parallel-zu-windows--macosa"><a href="installation/multi-os.html">Linux parallel zu Windows / macOS</a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="entscheidungen-für-einen-installer"><a class="header" href="#entscheidungen-für-einen-installer">Entscheidungen für einen Installer</a></h1>
+<h2 id="distribution"><a class="header" href="#distribution">Distribution</a></h2>
+<pre class="mermaid">flowchart TD
+    Paketmanager{Paketmanager?}
+    Paketmanager -.-&gt; rpm
+    rpm -.-&gt; RHEL([RHEL])
+    rpm -.-&gt; SUSE([SUSE])
+    rpm -.-&gt; CentOS([CentOS])
+    rpm -.-&gt; Fedora([Fedora])
+    rpm -.-&gt; Mandriva([Mandriva])
+    Paketmanager ==&gt; deb
+    deb ==&gt; Installation
+    Installation ==&gt; Anwendungsfall{Anwendungsfall?}
+    Anwendungsfall == robust, sicher, frei ==&gt; Server
+    Server ==&gt; Debian([Debian])
+    Anwendungsfall == benutzerfreundlich ==&gt; Endanwender
+    Endanwender ==&gt; LMDE([LMDE])
+    Endanwender ==&gt; Mint([Mint])
+    Anwendungsfall == mit Supportvertrag ==&gt; Kommerziell
+    Kommerziell ==&gt; Ubuntu([Ubuntu])
+    Anwendungsfall ==&gt; RaspberyPi
+    RaspberyPi ==&gt; Raspbian([Raspbian])
+    deb ==&gt; Live ==&gt; AnwendungsfallLive{Anwendungsfall?}
+    AnwendungsfallLive ==&gt; alles[von allem etwas]
+    alles ==&gt; Knoppix([Knoppix])
+    AnwendungsfallLive ==&gt; Security[security tasks]
+    Security ==&gt; Kali([Kali])
+    AnwendungsfallLive ==&gt; Privacy[paranoid privacy]
+    Privacy ==&gt; Tails([Tails])
+    Paketmanager --&gt; nix
+    nix --&gt; NixOS([NixOS])
+    Paketmanager -.-&gt; selber[selber bauen]
+    selber -.-&gt; Arch([Arch])
+    selber -.-&gt; Gentoo([Gentoo])
+</pre>
+<h2 id="architektur-1"><a class="header" href="#architektur-1">Architektur</a></h2>
+<pre class="mermaid">flowchart TD
+    CPU{CPU-Architektur?}
+    CPU -- 32-bit --&gt; i386
+    CPU == 64-bit ==&gt; amd64
+    CPU -.-&gt; armel
+    CPU -.-&gt; armhf
+    CPU -.-&gt; PowerPC
+    CPU -.-&gt; mips
+    CPU -.-&gt; SPARC
+</pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="distributionen"><a class="header" href="#distributionen">Distributionen</a></h1>
+<h2 id="a-hrefhttpswwwdebianorgdebiana"><a class="header" href="#a-hrefhttpswwwdebianorgdebiana"><a href="https://www.debian.org/">Debian</a></a></h2>
+<!-- https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/ -->
+<img src="https://www.debian.org/logos/openlogo-nd.svg" style="height: 10vh"/>
+<h3 id="a-hrefhttpsubuntucomubuntua-a-hrefhttpswwwlinuxmintcomminta-a-hrefhttpswwwlinuxmintcomdownload_lmdephplmdea"><a class="header" href="#a-hrefhttpsubuntucomubuntua-a-hrefhttpswwwlinuxmintcomminta-a-hrefhttpswwwlinuxmintcomdownload_lmdephplmdea"><a href="https://ubuntu.com/">Ubuntu</a>, <a href="https://www.linuxmint.com/">Mint</a>, <a href="https://www.linuxmint.com/download_lmde.php">LMDE</a></a></h3>
+<img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" style="height: 7vh"/>
+<img src="https://cdn.onsloth.com/data/images/logo/mintlogo-outline.svg" style="height: 7vh"/>
+<img src="" style="height: 7vh"/>
+<h3 id="a-hrefhttpswwwknoppernetknoppixknoppixa-a-hrefhttpswwwkaliorgkali-linuxa-a-hrefhttpstailsboumorgtailsa"><a class="header" href="#a-hrefhttpswwwknoppernetknoppixknoppixa-a-hrefhttpswwwkaliorgkali-linuxa-a-hrefhttpstailsboumorgtailsa"><a href="https://www.knopper.net/knoppix/">Knoppix</a>, <a href="https://www.kali.org/">Kali Linux</a>, <a href="https://tails.boum.org/">Tails</a></a></h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Knoppix_logo.svg" style="height: 7vh"/>
+<img src="https://www.kali.org/images/favicon.ico" style="height: 7vh"/>
+<img src="https://tails.boum.org/contribute/how/promote/material/logo/tails-logo-drawing.svg" style="height: 7vh"/>
+<h3 id="a-hrefhttpswwwraspbianorgraspbian--raspberry-pi-osa"><a class="header" href="#a-hrefhttpswwwraspbianorgraspbian--raspberry-pi-osa"><a href="https://www.raspbian.org/">Raspbian / Raspberry Pi OS</a></a></h3>
+<img src="https://upload.wikimedia.org/wikipedia/de/c/cb/Raspberry_Pi_Logo.svg" style="height: 7vh"/>
+<h2 id="a-hrefhttpsnixosorgnixosa"><a class="header" href="#a-hrefhttpsnixosorgnixosa"><a href="https://nixos.org/">NixOS</a></a></h2>
+<img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg" style="height: 10vh"/>
+<h2 id="a-hrefhttpswwwredhatcomred-hata-a-hrefhttpswwwarchlinuxdearcha-a-hrefhttpswwwgentooorggentooa"><a class="header" href="#a-hrefhttpswwwredhatcomred-hata-a-hrefhttpswwwarchlinuxdearcha-a-hrefhttpswwwgentooorggentooa"><a href="https://www.redhat.com/">Red Hat</a>, <a href="https://www.archlinux.de/">Arch</a>, <a href="https://www.gentoo.org/">Gentoo</a></a></h2>
+<img src="https://www.redhat.com/favicon.ico" style="height: 7vh"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Archlinux-icon-crystal-64.svg" style="height: 7vh"/>
+<img src="https://www.gentoo.org/assets/img/logo/gentoo-signet.svg" style="height: 7vh"/>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="desktopumgebungen"><a class="header" href="#desktopumgebungen">Desktopumgebungen</a></h1>
+<h2 id="a-hrefhttpskdeorgkdea"><a class="header" href="#a-hrefhttpskdeorgkdea"><a href="https://kde.org/">KDE</a></a></h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/94/KDE_Plasma_5.21_Breeze_Twilight_screenshot.png" alt="KDE" /></p>
+<h2 id="a-hrefhttpswwwgnomeorggnomea"><a class="header" href="#a-hrefhttpswwwgnomeorggnomea"><a href="https://www.gnome.org/">GNOME</a></a></h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Gnome_Shell_40.1.0.png" alt="GNOME" /></p>
+<h2 id="a-hrefhttpsmate-desktoporgmatea"><a class="header" href="#a-hrefhttpsmate-desktoporgmatea"><a href="https://mate-desktop.org/">Mate</a></a></h2>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Ubuntu_MATE_16.04_screenshot.png" alt="Mate" /></p>
+<h1 id="a-hrefhttpsgithubcomlinuxmintcinnamoncinnamona"><a class="header" href="#a-hrefhttpsgithubcomlinuxmintcinnamoncinnamona"><a href="https://github.com/linuxmint/Cinnamon">Cinnamon</a></a></h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Cinnamon_4.2.3_screenshot.png" alt="Cinnamon" /></p>
+<h1 id="a-hrefhttpslxdegithubiolxdea"><a class="header" href="#a-hrefhttpslxdegithubiolxdea"><a href="https://lxde.github.io/">LXDE</a></a></h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/LXDE_desktop_full.png" alt="LXDE" /></p>
+<h1 id="a-hrefhttpslxqt-projectorglxqta"><a class="header" href="#a-hrefhttpslxqt-projectorglxqta"><a href="https://lxqt-project.org/">LXQt</a></a></h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/LXQt_0.10_-_Ambiance.png" alt="LXQt" /></p>
+<h1 id="a-hrefhttpsxfceorgxfcea"><a class="header" href="#a-hrefhttpsxfceorgxfcea"><a href="https://xfce.org/">Xfce</a></a></h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/XFCE-4.12-Desktop-standard.png" alt="Xfce" /></p>
+<p>…</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="live-stick-erstellen"><a class="header" href="#live-stick-erstellen">Live-Stick erstellen</a></h1>
+<p><a href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/">Download</a> eines <code>iso-hybrid</code>-Images</p>
+<p>z.B. <a href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-11.3.0-amd64-mate.iso">debian-live-11.3.0-amd64-mate.iso</a></p>
+<h2 id="a-hrefhttpswwwdebianorgcdfaqindexenhtmlwrite-usbauf-usb-stick-kopierena"><a class="header" href="#a-hrefhttpswwwdebianorgcdfaqindexenhtmlwrite-usbauf-usb-stick-kopierena"><a href="https://www.debian.org/CD/faq/index.en.html#write-usb">auf USB-Stick kopieren</a></a></h2>
+<h3 id="unter-linux--unix"><a class="header" href="#unter-linux--unix">unter Linux / Unix</a></h3>
+<pre><code class="language-bash">lsblk  ## Nachschauen unter welchem Gerätename der Stick verfügbar ist =&gt; /dev/sdX
+</code></pre>
+<pre><code class="language-bash">cp *.iso /dev/sdX
+sync
+</code></pre>
+<h3 id="unter-windows"><a class="header" href="#unter-windows">unter Windows</a></h3>
+<p><a href="https://sourceforge.net/projects/win32diskimager/">win32diskimager</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-hrefhttpsnixosorgmanualnixosstablesec-installation-partitioningpartitionierunga"><a class="header" href="#a-hrefhttpsnixosorgmanualnixosstablesec-installation-partitioningpartitionierunga"><a href="https://nixos.org/manual/nixos/stable/#sec-installation-partitioning">Partitionierung</a></a></h1>
+<h2 id="trivial-root--swap"><a class="header" href="#trivial-root--swap">Trivial (Root + Swap)</a></h2>
+<pre class="mermaid">pie 
+    &quot;Root&quot; : 1024
+    &quot;Swap (&gt; Ram)&quot; : 32
+</pre>
+<h2 id="mit-efi-systempartition"><a class="header" href="#mit-efi-systempartition">Mit EFI Systempartition</a></h2>
+<pre class="mermaid">pie 
+    &quot;Root&quot; : 102400
+    &quot;Swap (&gt;Ram)&quot; : 3200
+    &quot;ESP&quot;: 512
+</pre>
+<h2 id="separate-home-partition"><a class="header" href="#separate-home-partition">Separate /home Partition</a></h2>
+<pre class="mermaid">pie 
+    &quot;Root&quot; : 128
+    &quot;Swap (&gt;Ram)&quot; : 32
+    &quot;Home&quot; : 864
+</pre>
+<h2 id="fortgeschritten"><a class="header" href="#fortgeschritten">Fortgeschritten</a></h2>
+<ul>
+<li>Raid</li>
+<li>Verschlüsselung</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="partitionierung"><a class="header" href="#partitionierung">Partitionierung</a></h1>
+<h2 id="a-hrefhttpscalamaresiodocspartitionsmit-dem-grafischen-installera"><a class="header" href="#a-hrefhttpscalamaresiodocspartitionsmit-dem-grafischen-installera"><a href="https://calamares.io/docs/partitions/">Mit dem grafischen Installer</a></a></h2>
+<p><img src="https://markontech.com/wp-content/uploads/2021/01/dual-boot-debian-10-and-windows-10-9-768x581.png" alt="calamares" /></p>
+<h2 id="a-hrefhttpsgpartedorgdisplay-docphpnamehelp-manuallangdegparteda"><a class="header" href="#a-hrefhttpsgpartedorgdisplay-docphpnamehelp-manuallangdegparteda"><a href="https://gparted.org/display-doc.php?name=help-manual&amp;lang=de">GParted</a></a></h2>
+<p><img src="https://gparted.org/docs/help-manual/de/figures/gparted_window.png" alt="gparted" /></p>
+<h2 id="a-hrefhttpsnixosorgmanualnixosstablesec-installation-partitioningparteda"><a class="header" href="#a-hrefhttpsnixosorgmanualnixosstablesec-installation-partitioningparteda"><a href="https://nixos.org/manual/nixos/stable/#sec-installation-partitioning">parted</a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="paketquellen"><a class="header" href="#paketquellen">Paketquellen</a></h1>
+<ol>
+<li><code>System</code> -&gt; <code>Systemverwaltung</code> -&gt; <code>Synaptic-Paketverwaltung</code></li>
+<li><code>Einstellungen</code> -&gt; <code>Paketquellen</code></li>
+<li>Bereich <code>non-free</code> neben <code>main</code> hinzufügen</li>
+<li><code>Neu laden</code></li>
+</ol>
+<p><img src="installation/grundlagen/./paketquellen/Synaptic-Paketquellen.png" alt="" />
+<img src="installation/grundlagen/./paketquellen/Synaptic-Paketquellen-non-free.png" alt="" /></p>
+<blockquote>
+<p>/etc/apt/sources.list</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-hrefhttpswwwdebianorgreleasesbullseyeamd64debian-gnulinux-installation-guidea"><a class="header" href="#a-hrefhttpswwwdebianorgreleasesbullseyeamd64debian-gnulinux-installation-guidea"><a href="https://www.debian.org/releases/bullseye/amd64/">Debian GNU/Linux Installation Guide</a></a></h1>
+<h2 id="rtfm"><a class="header" href="#rtfm">RTFM!?</a></h2>
+<h2 id="a-hrefhttpschemnitzerlinux-tagede2022deaddonspraxispraxis-dr-tuxa-"><a class="header" href="#a-hrefhttpschemnitzerlinux-tagede2022deaddonspraxispraxis-dr-tuxa-"><a href="https://chemnitzer.linux-tage.de/2022/de/addons/praxis">Praxis Dr. Tux</a> :)</a></h2>
+<h2 id="a-hrefhttpseventscccdetaghackcenterhackcentera"><a class="header" href="#a-hrefhttpseventscccdetaghackcenterhackcentera"><a href="https://events.ccc.de/tag/hackcenter/">Hackcenter</a></a></h2>
+<p><img src="https://zkm.de/sites/default/files/styles/r17_1280/public/bild/2014_gpn_0.jpg?itok=13TpLFHc" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="treiber"><a class="header" href="#treiber">Treiber</a></h1>
+<ul>
+<li>Sind im Kernel eincompiliert oder nachladbare Kernel-Module</li>
+<li>Werden für verbreitete Hardware aus den Paketquellen der Distributionen bereitgestellt</li>
+</ul>
+<h2 id="wird-meine-hardware-von-linux-unterstützt"><a class="header" href="#wird-meine-hardware-von-linux-unterstützt">Wird meine Hardware von Linux unterstützt?</a></h2>
+<ul>
+<li>Am einfachsten mal mit einem Live-System ausprobieren</li>
+<li>Internetrecherche nach Typenbezeichnung + „Linux“ oder Distributionsname</li>
+<li>meistens: Ja :)</li>
+</ul>
+<h2 id="debugging"><a class="header" href="#debugging">Debugging</a></h2>
+<pre><code class="language-bash">lshw
+
+dmesg
+</code></pre>
+<h2 id="typische-probleme"><a class="header" href="#typische-probleme">Typische Probleme</a></h2>
+<ul>
+<li>nicht-freie Firmware muss möglicherweise nachinstalliert werden</li>
+<li>proprietäre Treiber (z.B. für Nvidia-Grafikkarten)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ahci-für-acer-travelmate-p214"><a class="header" href="#ahci-für-acer-travelmate-p214">AHCI für <code>Acer TravelMate P214</code></a></h1>
+<p>Problem:</p>
+<blockquote>
+<p>keine Festplatte erkannt</p>
+</blockquote>
+<p>Lösungsweg:</p>
+<pre><code class="language-sh">lshw -class storage
+
+dmesg | grep -i raid
+</code></pre>
+<p>Lösung:</p>
+<blockquote>
+<p>Festplattencontroler <a href="https://community.acer.com/en/kb/articles/13993-how-to-change-sata-mode-to-ahci">im Bios auf AHCI umstellen</a></p>
+</blockquote>
+<blockquote>
+<p><code>Bios</code></p>
+<ul>
+<li><code>MAIN</code>
+<ul>
+<li><code>CTRL+S</code></li>
+<li><code>SATA Mode</code> = <code>AHCI</code></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wifi-firmware"><a class="header" href="#wifi-firmware">Wifi firmware</a></h1>
+<p>Problem:</p>
+<blockquote>
+<p>kein Wlan-Netzwerk-Interface</p>
+</blockquote>
+<p>Lösungsweg:</p>
+<pre><code class="language-sh">lshw -class network
+
+dmesg | grep -i wifi
+</code></pre>
+<p>GUI Lösung:</p>
+<blockquote>
+<p><code>System</code> -&gt; <code>Systemverwaltung</code> -&gt; <strong><code>Synaptic-Paketverwaltung</code></strong></p>
+<ul>
+<li><a href="installation/treiber/../paketquellen.html">Bereich <code>non-free</code> hinzufügen</a></li>
+<li><code>Suche</code> -&gt; <u>
+<strong>firmware wifi</strong></u> -&gt; <code>firmware-iwlwifi</code> -&gt; <code>Anwenden</code></li>
+</ul>
+</blockquote>
+<p>Shell Lösung:</p>
+<pre><code class="language-sh">sudo apt install iwlwifi
+sudo rmmod iwlwifi &amp;&amp; sudo modprobe iwlwifi
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mehrere-betriebssysteme-auf-einem-rechner"><a class="header" href="#mehrere-betriebssysteme-auf-einem-rechner">Mehrere Betriebssysteme auf einem Rechner</a></h1>
+<h2 id="live-systeme"><a class="header" href="#live-systeme">Live-Systeme</a></h2>
+<ul>
+<li>
+<p>optional mit Persistenz</p>
+</li>
+<li>
+<p>Alternative: Installation auf USB-Stick</p>
+</li>
+</ul>
+<h2 id="a-hrefhttpsdocsmicrosoftcomde-dewindowswslinstallwsla"><a class="header" href="#a-hrefhttpsdocsmicrosoftcomde-dewindowswslinstallwsla"><a href="https://docs.microsoft.com/de-de/windows/wsl/install">WSL</a></a></h2>
+<h2 id="virtuelle-machinen"><a class="header" href="#virtuelle-machinen">Virtuelle Machinen</a></h2>
+<ul>
+<li>z.B. mit <a href="https://www.virtualbox.org/">VirtualBox</a></li>
+</ul>
+<h2 id="multiboot"><a class="header" href="#multiboot">Multiboot</a></h2>
+<ul>
+<li>Bitte vorher Backups machen ;)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="administration-auf-der-kommandozeile"><a class="header" href="#administration-auf-der-kommandozeile">Administration auf der Kommandozeile</a></h1>
+<h2 id="warum"><a class="header" href="#warum">Warum?</a></h2>
+<h2 id="grundlagen"><a class="header" href="#grundlagen">Grundlagen</a></h2>
+<p><code>--help</code>, <strong><code>man</code></strong></p>
+<p><strong><code>pwd</code></strong>, <strong><code>ls</code></strong>, <strong><code>cd</code></strong></p>
+<p><strong><code>nano</code></strong>, <code>vim</code>, <em><code>emacs</code></em></p>
+<p><strong><code>ps</code></strong>, <code>bg</code>, <code>fg</code>,  <strong><code>kill</code></strong>, <code>pkill</code>, <code>xkill</code></p>
+<p><strong><code>htop</code></strong>, <code>atop</code>, <code>iftop</code></p>
+<h2 id="a-hrefhttpsdewikipediaorgwikiunix-philosophiealles_ist_eine_dateipower-der-kommandozeilea"><a class="header" href="#a-hrefhttpsdewikipediaorgwikiunix-philosophiealles_ist_eine_dateipower-der-kommandozeilea"><a href="https://de.wikipedia.org/wiki/Unix-Philosophie#Alles_ist_eine_Datei">Power der Kommandozeile</a></a></h2>
+<p><strong><code>|</code></strong>, <strong><code>&gt;</code></strong>, <strong><code>&gt;&gt;</code></strong></p>
+<p><strong><code>cat</code></strong>, <em><code>bat</code></em>, <code>head</code>, <code>tail</code>, <strong><code>less</code></strong>, <em><code>tee</code></em></p>
+<p><strong><code>grep</code></strong></p>
+<p><code>sort</code>, <code>uniq</code>, <code>wc</code></p>
+<p><code>sed</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-hrefhttpsdewikipediaorgwikiunix-philosophieunix-philosophiea"><a class="header" href="#a-hrefhttpsdewikipediaorgwikiunix-philosophieunix-philosophiea"><a href="https://de.wikipedia.org/wiki/Unix-Philosophie">Unix-Philosophie</a></a></h1>
+<blockquote>
+<p>„Alles ist eine Datei“</p>
+</blockquote>
+<h2 id="dev"><a class="header" href="#dev">/dev</a></h2>
+<pre><code class="language-bash">ls /dev
+</code></pre>
+<h2 id="proc-und-sys"><a class="header" href="#proc-und-sys">/proc und /sys</a></h2>
+<pre><code class="language-bash">cat /proc/cpuinfo
+
+cat /proc/meminfo
+
+zcat /proc/config.gz
+</code></pre>
+<pre><code class="language-bash">cat /sys/class/backlight/intel_backlight/brightness
+cat /sys/class/backlight/intel_backlight/max_brightness
+echo 1000 &gt; /sys/class/backlight/intel_backlight/brightness
+</code></pre>
+<h3 id="a-hrefhttpswwwelektronik-kompendiumdesitesraspberry-pi2202101htmgpio-raspberrypia"><a class="header" href="#a-hrefhttpswwwelektronik-kompendiumdesitesraspberry-pi2202101htmgpio-raspberrypia"><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/2202101.htm">GPIO @RaspberryPi</a></a></h3>
+<pre><code class="language-bash">echo 1 &gt; /sys/class/gpio/gpio17/value
+```bash
+
+## /etc
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="verwalten-des-dateisystems-dateien-und-ordner"><a class="header" href="#verwalten-des-dateisystems-dateien-und-ordner">Verwalten des Dateisystems, Dateien und Ordner</a></h1>
+<p><strong><code>pwd</code></strong>, <strong><code>ls</code></strong>, <strong><code>cd</code></strong>  <!--Wiederholung--></p>
+<p><code>find</code></p>
+<p><code>touch</code>, <strong><code>rm</code></strong></p>
+<p><strong><code>mkdir</code></strong>, <code>rmdir</code></p>
+<p><strong><code>lsblk</code></strong></p>
+<p><strong><code>mount</code></strong>, <code>umount</code></p>
+<p><strong><code>gparted</code></strong>, <code>parted</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="benutzer-und-berechtigungen-verwalten"><a class="header" href="#benutzer-und-berechtigungen-verwalten">Benutzer und Berechtigungen verwalten</a></h1>
+<h2 id="einführung-rechte-unter-unix--linux"><a class="header" href="#einführung-rechte-unter-unix--linux">Einführung: Rechte unter Unix / Linux</a></h2>
+<pre><code class="language-bash">ls -l
+-rw-r--r-- benutzer gruppe … dateiname
+drwxr-xr-x benutzer gruppe … ordnername
+</code></pre>
+<blockquote>
+<pre> directory benutzer gruppe andere</pre>
+<pre> -         rw-      r--    r--</pre>
+<pre> d         rwx      r-x    r-x</pre>
+</blockquote>
+<h2 id="nutzer"><a class="header" href="#nutzer">Nutzer</a></h2>
+<p><code>whoami</code>, <code>id</code></p>
+<p><strong><code>sudo</code></strong>, <strong><code>su</code></strong></p>
+<p><code>adduser</code></p>
+<p><code>/etc/passwd</code>, <code>/etc/shadow</code></p>
+<h2 id="a-hrefhttpsmanpagesdebianorgbullseyeadduseraddgroup8dehtmlgruppena"><a class="header" href="#a-hrefhttpsmanpagesdebianorgbullseyeadduseraddgroup8dehtmlgruppena"><a href="https://manpages.debian.org/bullseye/adduser/addgroup.8.de.html">Gruppen</a></a></h2>
+<p><code>addgroup</code>, <code>adduser</code></p>
+<p><code>/etc/group</code></p>
+<h2 id="dateiberechtigungen"><a class="header" href="#dateiberechtigungen">Dateiberechtigungen</a></h2>
+<p><strong><code>chmod</code></strong>, <strong><code>chown</code></strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-hrefhttpswikidebianorgnetworkconfigurationnetzwerk-konfigurationa"><a class="header" href="#a-hrefhttpswikidebianorgnetworkconfigurationnetzwerk-konfigurationa"><a href="https://wiki.debian.org/NetworkConfiguration">Netzwerk-Konfiguration</a></a></h1>
+<p><strong><code>ip</code></strong>, <code>ifconfig</code>, <code>route</code>, <em><code>nmtui</code></em></p>
+<p><strong><code>ping</code></strong>, <code>traceroute</code>, <code>tracepath</code>, <strong><code>dig</code></strong></p>
+<p><code>netstat</code>, <em><code>ss</code></em></p>
+<p><code>hostname</code></p>
+<p><code>/etc/network/interfaces</code></p>
+<p><code>/etc/resolv.conf</code></p>
+<p><code>/etc/hosts</code></p>
+<p><code>/etc/hostname</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ssh"><a class="header" href="#ssh">SSH</a></h1>
+<p><strong><code>ssh</code></strong></p>
+<p><strong><code>scp</code></strong>, <em><code>fish</code></em></p>
+<p><code>tmux</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bootloader-und-bootprozess"><a class="header" href="#bootloader-und-bootprozess">Bootloader und Bootprozess</a></h1>
+<pre class="mermaid">flowchart LR
+  subgraph ROM
+    BIOS
+  end
+  subgraph Bootloader
+  end
+  BIOS == 1 ==&gt; Bootloader
+  subgraph Arbeitsspeicher
+    Kernel
+    Initrd
+  end
+  Bootloader == 3 ==&gt; Kernel
+  Bootloader -. &quot;2 kopiert&quot; .-&gt; Initrd
+  subgraph FS[&quot;/ Dateisystem&quot;]
+    init[&quot;/sbin/init&quot;]
+  end
+  Kernel -. &quot;4 mounted&quot; .-&gt; FS
+  Kernel == 5 ==&gt; init
+</pre>
+<h2 id="bootgrubgrubcfg"><a class="header" href="#bootgrubgrubcfg">/boot/grub/grub.cfg</a></h2>
+<pre><code class="language-grub.cfg">menuentry &quot;Titel&quot; {
+  initrd /boot/kernels/initrd-linux-5.4.70-initrd (2) 
+  linux /boot/kernels/linux-5.4.70 (3) root=/dev/sdX (4) init=/sbin/init (5)
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="init-am-beispiel-systemd"><a class="header" href="#init-am-beispiel-systemd">Init am Beispiel Systemd</a></h1>
+<p><strong><code>systemctl</code></strong>, <strong><code>journalctl</code></strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="live-systeme-datenrettung-hacken"><a class="header" href="#live-systeme-datenrettung-hacken">Live-Systeme, Datenrettung, Hacken</a></h1>
+<p><code>dd</code>, <code>ddrescue</code></p>
+<h2 id="initbinbash"><a class="header" href="#initbinbash">init=/bin/bash</a></h2>
+<h2 id="etcshadow"><a class="header" href="#etcshadow">/etc/shadow</a></h2>
+<h2 id="a-hrefhttpswwwcccdedehackerethikhackerethika"><a class="header" href="#a-hrefhttpswwwcccdedehackerethikhackerethika"><a href="https://www.ccc.de/de/hackerethik">Hackerethik</a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="verschlüsselung"><a class="header" href="#verschlüsselung">Verschlüsselung</a></h1>
+<pre class="mermaid">flowchart TB
+  Verschlüsselung --&gt; Geräteverschlüsselung
+  Verschlüsselung --&gt; Transportverschlüsselung
+  Transportverschlüsselung --&gt; Punkt-zu-Punkt-Verschlüsselung
+  Transportverschlüsselung --&gt; Ende-zu-Ende-Verschlüsselung
+</pre>
+<h2 id="geräteverschlüsselung"><a class="header" href="#geräteverschlüsselung">Geräteverschlüsselung</a></h2>
+<h3 id="a-hrefhttpsmanpagesdebianorgbullseyecryptsetup-bincryptsetup8enhtmlluks--cryptsetupa"><a class="header" href="#a-hrefhttpsmanpagesdebianorgbullseyecryptsetup-bincryptsetup8enhtmlluks--cryptsetupa"><a href="https://manpages.debian.org/bullseye/cryptsetup-bin/cryptsetup.8.en.html">Luks / Cryptsetup</a></a></h3>
+<h3 id="a-hrefhttpswwwveracryptfrveracrypta"><a class="header" href="#a-hrefhttpswwwveracryptfrveracrypta"><a href="https://www.veracrypt.fr/">VeraCrypt</a></a></h3>
+<h2 id="transportverschlüsselung"><a class="header" href="#transportverschlüsselung">Transportverschlüsselung</a></h2>
+<h4 id="a-hrefhttpslinuxizecomposthow-to-setup-ssh-tunnelingssha"><a class="header" href="#a-hrefhttpslinuxizecomposthow-to-setup-ssh-tunnelingssha"><a href="https://linuxize.com/post/how-to-setup-ssh-tunneling/">SSH</a></a></h4>
+<h4 id="vpn-zb-a-hrefhttpsopenvpnnetopenvpna"><a class="header" href="#vpn-zb-a-hrefhttpsopenvpnnetopenvpna">VPN (z.B. <a href="https://openvpn.net/">OpenVPN</a></a></h4>
+<h3 id="punkt-zu-punkt-verschlüsselung"><a class="header" href="#punkt-zu-punkt-verschlüsselung">Punkt-zu-Punkt-Verschlüsselung</a></h3>
+<pre class="mermaid">flowchart LR
+  subgraph Punkt-zu-Punkt
+    Client1 &lt;==&gt; Server1
+  end
+  Server1 &lt;==&gt; Server2
+  Server2 &lt;==&gt; Client2
+</pre>
+<h4 id="a-hrefhttpsdewikipediaorgwikitransport_layer_securityssl--tlsa"><a class="header" href="#a-hrefhttpsdewikipediaorgwikitransport_layer_securityssl--tlsa"><a href="https://de.wikipedia.org/wiki/Transport_Layer_Security">SSL / TLS</a></a></h4>
+<h3 id="ende-zu-ende-verschlüsselung"><a class="header" href="#ende-zu-ende-verschlüsselung">Ende-zu-Ende-Verschlüsselung</a></h3>
+<pre class="mermaid">flowchart
+  subgraph Ende-zu-Ende
+    Client1 &lt;== Server1-Server2 ==&gt; Client2
+  end
+</pre>
+<h4 id="a-hrefhttpsgnupgorgpgp--gpga"><a class="header" href="#a-hrefhttpsgnupgorgpgp--gpga"><a href="https://gnupg.org/">PGP / GPG</a></a></h4>
+<h4 id="a-hrefhttpsdewikipediaorgwikismimesmime--x509a"><a class="header" href="#a-hrefhttpsdewikipediaorgwikismimesmime--x509a"><a href="https://de.wikipedia.org/wiki/S/MIME">S/MIME / X.509</a></a></h4>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="virtualisierung"><a class="header" href="#virtualisierung">Virtualisierung</a></h1>
+<h2 id="a-hrefhttpswikidebianorgqemuqemu--kvma"><a class="header" href="#a-hrefhttpswikidebianorgqemuqemu--kvma"><a href="https://wiki.debian.org/QEMU">Qemu / KVM</a></a></h2>
+<pre><code class="language-bash">qemu-kvm -cdrom ~/Downloads/debian-live-11.3.0-amd64-mate.iso -boot d -m 4000
+</code></pre>
+<h2 id="a-hrefhttpswwwvirtualboxorgwikidocumentationvirtualboxa"><a class="header" href="#a-hrefhttpswwwvirtualboxorgwikidocumentationvirtualboxa"><a href="https://www.virtualbox.org/wiki/Documentation">VirtualBox</a></a></h2>
+<h2 id="a-hrefhttpsdocsmicrosoftcomde-dewindowswslwsla"><a class="header" href="#a-hrefhttpsdocsmicrosoftcomde-dewindowswslwsla"><a href="https://docs.microsoft.com/de-de/windows/wsl/">WSL</a></a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="backups"><a class="header" href="#backups">Backups</a></h1>
+<h2 id="gui"><a class="header" href="#gui">GUI</a></h2>
+<h3 id="zb-a-hrefhttpswikignomeorgappsdejadupdéjà-dupa-a-hrefhttpswikiubuntuusersdedc3a9jc3a0_dupdea"><a class="header" href="#zb-a-hrefhttpswikignomeorgappsdejadupdéjà-dupa-a-hrefhttpswikiubuntuusersdedc3a9jc3a0_dupdea">z.B. <a href="https://wiki.gnome.org/Apps/DejaDup">Déjà Dup</a> <a href="https://wiki.ubuntuusers.de/D%C3%A9j%C3%A0_Dup/">(de)</a></a></h3>
+<p><img src="https://wiki.gnome.org/Apps/DejaDup?action=AttachFile&amp;do=get&amp;target=main-window-43-0.png" alt="" /></p>
+<h2 id="shell"><a class="header" href="#shell">Shell</a></h2>
+<h3 id="a-hrefhttpduplicitynongnuorgduplicitya"><a class="header" href="#a-hrefhttpduplicitynongnuorgduplicitya"><a href="http://duplicity.nongnu.org/">duplicity</a></a></h3>
+<h3 id="a-hrefhttpsresticnetrestica-a-hrefhttpswikiubuntuusersderesticdea"><a class="header" href="#a-hrefhttpsresticnetrestica-a-hrefhttpswikiubuntuusersderesticdea"><a href="https://restic.net/">restic</a> <a href="https://wiki.ubuntuusers.de/Restic/">(de)</a></a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="versionskontrolle-am-beispiel-a-hrefhttpsgit-scmcomdocsgita"><a class="header" href="#versionskontrolle-am-beispiel-a-hrefhttpsgit-scmcomdocsgita">Versionskontrolle am Beispiel <a href="https://git-scm.com/docs">git</a></a></h1>
+<pre><code class="language-bash">git init
+
+git add $FILE
+
+git commit
+
+git log
+
+git status
+</code></pre>
+<pre><code class="language-bash">git branch
+
+git checkout
+
+git merge
+</code></pre>
+<pre><code class="language-bash">git clone
+
+git pull
+
+gut push
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="skript-programmierung-mit-bash"><a class="header" href="#skript-programmierung-mit-bash">Skript-Programmierung mit Bash</a></h1>
+<pre><code class="language-bash">#!/usr/bin/bash
+
+echo &quot;hallo welt&quot;
+</code></pre>
+<p>oder</p>
+<pre><code class="language-bash">#!/usr/bin/env bash
+
+echo &quot;hallo welt&quot;
+</code></pre>
+<pre><code class="language-bash">chmod +x $DATEI
+</code></pre>
+<h2 id="kommentare"><a class="header" href="#kommentare">Kommentare</a></h2>
+<pre><code class="language-bash"># Kommentare sind oft hilfreich :)
+</code></pre>
+<h2 id="variablen"><a class="header" href="#variablen">Variablen</a></h2>
+<pre><code class="language-bash">VARIABLE=&quot;wert&quot;
+
+echo $VARIABLE
+</code></pre>
+<h3 id="besondere-variablen"><a class="header" href="#besondere-variablen">besondere Variablen</a></h3>
+<p><code>$1</code>, <code>$2</code>, …</p>
+<p><code>$@</code>, <code>$#</code></p>
+<p><code>$?</code></p>
+<h2 id="kontrollstrukuren"><a class="header" href="#kontrollstrukuren">Kontrollstrukuren</a></h2>
+<h3 id="bedingungen"><a class="header" href="#bedingungen">Bedingungen</a></h3>
+<pre><code class="language-bash">true &amp;&amp; echo &quot;wird ausgeführt, wenn der vorherige Befehl wahr zurück gibt&quot;
+## (return value 0)
+
+false || echo &quot;wird ausgeführt, wenn der vorherige Befehl falsch zurück gibt&quot;
+## (return value ungleich 0)
+</code></pre>
+<pre><code class="language-bash">if [ $A = $B ]; then
+  echo &quot;A und B sind gleich.&quot;
+else
+  echo &quot;A und B sind ungleich.&quot;
+fi
+</code></pre>
+<h4 id="test"><a class="header" href="#test">test</a></h4>
+<pre><code class="language-bash">man test
+</code></pre>
+<h3 id="for-schleifen"><a class="header" href="#for-schleifen">For-Schleifen</a></h3>
+<pre><code class="language-bash">for I in $(seq 10); do
+  echo $I
+done
+</code></pre>
+<h3 id="while-schleifen"><a class="header" href="#while-schleifen">While-Schleifen</a></h3>
+<pre><code class="language-bash">while read LINE; do
+  echo $LINE
+done
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="softwareentwicklung"><a class="header" href="#softwareentwicklung">Softwareentwicklung</a></h1>
+<h2 id="ides"><a class="header" href="#ides">IDEs</a></h2>
+<h3 id="vim-emacs-"><a class="header" href="#vim-emacs-">Vim, Emacs, …</a></h3>
+<h3 id="a-hrefhttpskate-editororgkatea"><a class="header" href="#a-hrefhttpskate-editororgkatea"><a href="https://kate-editor.org/">Kate</a></a></h3>
+<h3 id="a-hrefhttpsatomioatoma"><a class="header" href="#a-hrefhttpsatomioatoma"><a href="https://atom.io/">Atom</a></a></h3>
+<h3 id="a-hrefhttpscodevisualstudiocomdocssetuplinuxvisual-studio-codea"><a class="header" href="#a-hrefhttpscodevisualstudiocomdocssetuplinuxvisual-studio-codea"><a href="https://code.visualstudio.com/docs/setup/linux">Visual Studio Code</a></a></h3>
+<h2 id="sprachen"><a class="header" href="#sprachen">Sprachen</a></h2>
+<h3 id="python"><a class="header" href="#python">Python</a></h3>
+<pre><code class="language-bash">apt install ipython
+</code></pre>
+<h3 id="java"><a class="header" href="#java">Java</a></h3>
+<pre><code class="language-bash">apt search openjdk
+</code></pre>
+<h3 id="javascript--nodejs"><a class="header" href="#javascript--nodejs">JavaScript / Node.js</a></h3>
+<pre><code class="language-bash">apt install yarn
+</code></pre>
+<h3 id="php"><a class="header" href="#php">PHP</a></h3>
+<pre><code>apt search php
+</code></pre>
+<p><a href="https://wiki.debian.org/LaMp">LAMP</a></p>
+<h3 id="c--net"><a class="header" href="#c--net">C# / .NET</a></h3>
+<p><a href="https://www.mono-project.com/download/stable/#download-lin-debian">mono-project</a></p>
+<h3 id="an-welchen-anderen-sprachen-besteht-interesse"><a class="header" href="#an-welchen-anderen-sprachen-besteht-interesse">…an welchen anderen Sprachen besteht Interesse?</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ausblick"><a class="header" href="#ausblick">Ausblick</a></h1>
+<h2 id="a-hrefhttpslug-ddschlittermanndelistehtmllug-dda"><a class="header" href="#a-hrefhttpslug-ddschlittermanndelistehtmllug-dda"><a href="https://lug-dd.schlittermann.de/liste.html">LUG DD</a></a></h2>
+<p><img src="https://lug-dd.schlittermann.de/img/tux-180.jpg" alt="" /></p>
+<h2 id="a-hrefhttpsc3d2despacehtmlc3d2-hackerspace-a"><a class="header" href="#a-hrefhttpsc3d2despacehtmlc3d2-hackerspace-a"><a href="https://c3d2.de/space.html">C3D2 Hackerspace &lt;&lt;&lt;/&gt;&gt;</a></a></h2>
+<p><img src="https://c3d2.de/status.png" alt="" />
+<img src="https://gitea.c3d2.de/c3d2/c3d2-web/raw/branch/master/content/static/images/logo.png" alt="" /></p>
+<h2 id="a-hrefhttpsdatenspurendedatenspurena"><a class="header" href="#a-hrefhttpsdatenspurendedatenspurena"><a href="https://datenspuren.de/">Datenspuren</a></a></h2>
+<p><img src="https://datenspuren.de/2006/images/datenspuren.png" alt="" /></p>
+<h2 id="a-hrefhttpsc3d2deradiohtmlpentaradioa"><a class="header" href="#a-hrefhttpsc3d2deradiohtmlpentaradioa"><a href="https://c3d2.de/radio.html">Pentaradio</a></a></h2>
+<p><img src="https://c3d2.de/images/pentaradio.png" alt="" /></p>
+<h2 id="a-hrefhttpschemnitzerlinux-tagedechemnitzer-linuxtagea"><a class="header" href="#a-hrefhttpschemnitzerlinux-tagedechemnitzer-linuxtagea"><a href="https://chemnitzer.linux-tage.de/">Chemnitzer Linuxtage</a></a></h2>
+<p><img src="https://chemnitzer.linux-tage.de/2022/static/img/logo_de.png" alt="" /></p>
+<h2 id="a-hrefhttpsmediacccdemediacccdea"><a class="header" href="#a-hrefhttpsmediacccdemediacccdea"><a href="https://media.ccc.de">media.ccc.de</a></a></h2>
+<p><img src="https://blinry.org/voctocat/voctocat.svg" alt="" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="spickzettel"><a class="header" href="#spickzettel">Spickzettel</a></h1>
+<p><a href="https://manpages.debian.org/bullseye">manpages.debian.org</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quellen-und-weiterführende-links"><a class="header" href="#quellen-und-weiterführende-links">Quellen und weiterführende Links</a></h1>
+<ul>
+<li><a href="https://learning.lpi.org/de/learning-materials/010-160/">LPI Linux Essentials</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                            </nav>
+
+        </div>
+
+                <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3333/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+                <script type="text/javascript" src="mermaid.min.js"></script>
+                <script type="text/javascript" src="mermaid-init.js"></script>
+        
+                        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+                
+    </body>
+</html>
