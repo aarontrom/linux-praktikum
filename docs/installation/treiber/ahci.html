@@ -157,7 +157,7 @@
 <p>Lösungsweg:</p>
 <pre><code class="language-sh">lshw -class storage
 
-dmesg | grep -i raid
+journalctl -k | grep -i raid
 </code></pre>
 <p>Lösung:</p>
 <blockquote>

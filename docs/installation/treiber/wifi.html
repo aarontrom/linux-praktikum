@@ -157,7 +157,7 @@
 <p>Lösungsweg:</p>
 <pre><code class="language-sh">lshw -class network
 
-dmesg | grep -i wifi
+journalctl -k | grep -i wifi
 </code></pre>
 <p>GUI Lösung:</p>
 <blockquote>

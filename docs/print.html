@@ -561,7 +561,7 @@ sync
 <h2 id="debugging"><a class="header" href="#debugging">Debugging</a></h2>
 <pre><code class="language-bash">lshw
 
-dmesg
+journalctl  ## oder dmesg
 </code></pre>
 <h2 id="typische-probleme"><a class="header" href="#typische-probleme">Typische Probleme</a></h2>
 <ul>
@@ -576,7 +576,7 @@ dmesg
 <p>Lösungsweg:</p>
 <pre><code class="language-sh">lshw -class storage
 
-dmesg | grep -i raid
+journalctl -k | grep -i raid
 </code></pre>
 <p>Lösung:</p>
 <blockquote>
@@ -601,7 +601,7 @@ dmesg | grep -i raid
 <p>Lösungsweg:</p>
 <pre><code class="language-sh">lshw -class network
 
-dmesg | grep -i wifi
+journalctl -k | grep -i wifi
 </code></pre>
 <p>GUI Lösung:</p>
 <blockquote>
@@ -1016,8 +1016,10 @@ drwxr-xr-x benutzer gruppe … ordnername
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="init-am-beispiel-systemd"><a class="header" href="#init-am-beispiel-systemd">Init am Beispiel Systemd</a></h1>
 <p><strong><code>systemctl</code></strong>, <strong><code>journalctl</code></strong></p>
+<hr />
 <div style="break-before: page; page-break-before: always;"></div><h1 id="live-systeme-datenrettung-hacken"><a class="header" href="#live-systeme-datenrettung-hacken">Live-Systeme, Datenrettung, Hacken</a></h1>
 <p><code>dd</code>, <code>ddrescue</code></p>
+<hr />
 <h2 id="initbinbash"><a class="header" href="#initbinbash">init=/bin/bash</a></h2>
 <h2 id="etcshadow"><a class="header" href="#etcshadow">/etc/shadow</a></h2>
 <h2 id="a-hrefhttpswwwcccdedehackerethikhackerethika"><a class="header" href="#a-hrefhttpswwwcccdedehackerethikhackerethika"><a href="https://www.ccc.de/de/hackerethik">Hackerethik</a></a></h2>
