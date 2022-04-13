@@ -152,6 +152,33 @@
                         <h1 id="init-am-beispiel-systemd"><a class="header" href="#init-am-beispiel-systemd">Init am Beispiel Systemd</a></h1>
 <p><strong><code>systemctl</code></strong>, <strong><code>journalctl</code></strong></p>
 <hr />
+<pre><code class="language-bash">systemctl  ## list-units
+
+systemctl --failed
+
+systemctl status $UNIT
+
+systemctl enable $UNIT
+systemctl disable $UNIT
+
+systemctl start $UNIT
+systemctl stop $UNIT
+</code></pre>
+<pre><code class="language-bash">journalctl
+
+journalctl -u $UNIT
+journalctl -k
+</code></pre>
+<h4 id="aufgabe"><a class="header" href="#aufgabe">Aufgabe</a></h4>
+<ol>
+<li><input disabled="" type="checkbox"/>
+Installiere den <code>openssh-server</code>. Starte und aktiviere den Service und kontrolliere den Status.</li>
+</ol>
+<h4 id="zusatzaufgabe"><a class="header" href="#zusatzaufgabe">Zusatzaufgabe</a></h4>
+<ol start="2">
+<li><input disabled="" type="checkbox"/>
+Schaue dir die Logs der unit ssh an.</li>
+</ol>
 
                     </main>
 

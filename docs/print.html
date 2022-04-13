@@ -1105,9 +1105,35 @@ ip route
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ssh"><a class="header" href="#ssh">SSH</a></h1>
 <p><strong><code>ssh</code></strong></p>
-<p><strong><code>scp</code></strong>, <em><code>fish</code></em></p>
+<p><strong><code>scp</code></strong></p>
 <p><code>tmux</code></p>
 <hr />
+<pre><code class="language-bash">ssh $USER@$HOST
+
+cat ~/.ssh/config
+
+man ssh_config
+</code></pre>
+<pre><code class="language-bash">scp $DATEI $USER@$HOST:$PFAD
+scp -r $ORDNER $USER@$HOST:$PFAD
+
+scp $USER@$HOST:$DATEI $PFAD
+scp -r $USER@$HOST:$ORDNER $PFAD
+</code></pre>
+<h4 id="aufgabe"><a class="header" href="#aufgabe">Aufgabe:</a></h4>
+<ol>
+<li><input disabled="" type="checkbox"/>
+Kopiere die Datei /home/demo/beispiel vom „Demo-Server“ auf dein lokales Gerät.</li>
+</ol>
+<h5 id="zusatzaufgabe-2"><a class="header" href="#zusatzaufgabe-2">Zusatzaufgabe:</a></h5>
+<ol start="2">
+<li><input disabled="" type="checkbox"/>
+Finde dem dem Program <code>file</code> heraus, was für eine Dateityp die beispiel-Datei hat.</li>
+<li><input disabled="" type="checkbox"/>
+Öffne die beispiel-Datei von der Kommandozeile mit dem Befehl <code>xdg-open</code>.</li>
+<li><input disabled="" type="checkbox"/>
+Öffne die Datei über den grafischen Dateimanager.</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="verwalten-des-dateisystems-dateien-und-ordner"><a class="header" href="#verwalten-des-dateisystems-dateien-und-ordner">Verwalten des Dateisystems, Dateien und Ordner</a></h1>
 <p><strong><code>pwd</code></strong>, <strong><code>ls</code></strong>, <strong><code>cd</code></strong>  <!--Wiederholung--></p>
 <p><code>find</code>, <em><code>tree</code></em></p>
@@ -1146,6 +1172,33 @@ ip route
 <div style="break-before: page; page-break-before: always;"></div><h1 id="init-am-beispiel-systemd"><a class="header" href="#init-am-beispiel-systemd">Init am Beispiel Systemd</a></h1>
 <p><strong><code>systemctl</code></strong>, <strong><code>journalctl</code></strong></p>
 <hr />
+<pre><code class="language-bash">systemctl  ## list-units
+
+systemctl --failed
+
+systemctl status $UNIT
+
+systemctl enable $UNIT
+systemctl disable $UNIT
+
+systemctl start $UNIT
+systemctl stop $UNIT
+</code></pre>
+<pre><code class="language-bash">journalctl
+
+journalctl -u $UNIT
+journalctl -k
+</code></pre>
+<h4 id="aufgabe-1"><a class="header" href="#aufgabe-1">Aufgabe</a></h4>
+<ol>
+<li><input disabled="" type="checkbox"/>
+Installiere den <code>openssh-server</code>. Starte und aktiviere den Service und kontrolliere den Status.</li>
+</ol>
+<h4 id="zusatzaufgabe-3"><a class="header" href="#zusatzaufgabe-3">Zusatzaufgabe</a></h4>
+<ol start="2">
+<li><input disabled="" type="checkbox"/>
+Schaue dir die Logs der unit ssh an.</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="live-systeme-datenrettung-hacken"><a class="header" href="#live-systeme-datenrettung-hacken">Live-Systeme, Datenrettung, Hacken</a></h1>
 <p><code>dd</code>, <code>ddrescue</code></p>
 <hr />

@@ -151,9 +151,35 @@
                     <main>
                         <h1 id="ssh"><a class="header" href="#ssh">SSH</a></h1>
 <p><strong><code>ssh</code></strong></p>
-<p><strong><code>scp</code></strong>, <em><code>fish</code></em></p>
+<p><strong><code>scp</code></strong></p>
 <p><code>tmux</code></p>
 <hr />
+<pre><code class="language-bash">ssh $USER@$HOST
+
+cat ~/.ssh/config
+
+man ssh_config
+</code></pre>
+<pre><code class="language-bash">scp $DATEI $USER@$HOST:$PFAD
+scp -r $ORDNER $USER@$HOST:$PFAD
+
+scp $USER@$HOST:$DATEI $PFAD
+scp -r $USER@$HOST:$ORDNER $PFAD
+</code></pre>
+<h4 id="aufgabe"><a class="header" href="#aufgabe">Aufgabe:</a></h4>
+<ol>
+<li><input disabled="" type="checkbox"/>
+Kopiere die Datei /home/demo/beispiel vom „Demo-Server“ auf dein lokales Gerät.</li>
+</ol>
+<h5 id="zusatzaufgabe"><a class="header" href="#zusatzaufgabe">Zusatzaufgabe:</a></h5>
+<ol start="2">
+<li><input disabled="" type="checkbox"/>
+Finde dem dem Program <code>file</code> heraus, was für eine Dateityp die beispiel-Datei hat.</li>
+<li><input disabled="" type="checkbox"/>
+Öffne die beispiel-Datei von der Kommandozeile mit dem Befehl <code>xdg-open</code>.</li>
+<li><input disabled="" type="checkbox"/>
+Öffne die Datei über den grafischen Dateimanager.</li>
+</ol>
 
                     </main>
 
